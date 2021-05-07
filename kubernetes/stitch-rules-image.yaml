@@ -1,6 +1,6 @@
 kind: Rules
 metadata:
-  namespace: stitch-tutorial
+  namespace: k8s-tutorial
 spec:
   - name: “k8s.ImageTag”
     description: “Replace image tag after CI produces new image”
