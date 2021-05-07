@@ -2,7 +2,7 @@ kind: Rules
 metadata:
   namespace: k8s-tutorial
 spec:
-  - name: “k8s.ImageTag”
+  - name: k8s.ImageTag
     description: “Replace image tag after CI produces new image”
     condition:
       deployedType: k8s.Resources
