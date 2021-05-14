@@ -6,7 +6,7 @@ spec:
     description: “Replace image tag after CI produces new image”
     condition:
       deployedType: k8s.Resources
-      expression: “#input.getStringValue(‘$.kind’) == ‘Deployment’”
+      expression: “#input.getStringValue('$.kind') == 'Deployment'”
     processor:
       - type: patch
         description: “Changing image tag”
@@ -17,4 +17,4 @@ spec:
           patch:
             - op: replace
               path: “/spec/template/spec/containers/0/image”
-              value: “#{‘{{image_name}}’+#ctx.getCurrentDeployedApplication().getName()}”
+              value: “#{'{{image_name}}'+':'+#ctx.getCurrentDeployedApplication().getName()}”
