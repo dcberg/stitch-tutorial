@@ -17,4 +17,4 @@ spec:
           patch:
             - op: replace
               path: "/spec/template/spec/containers/0/image"
-              value: "#{'danberg/hello-py:'+#ctx.getCurrentDeployedApplication().getName()}"
+              value: "#{'{{image_name}}:'+#ctx.getCurrentDeployedApplication().getName()}"
